@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<alloy>
+
+<view nodetheme="Martha">
+
+<projection> <type name="State"/> </projection>
+
+<defaultnode/>
+
+<defaultedge/>
+
+<node>
+   <type name="Int"/>
+   <type name="State"/>
+   <type name="String"/>
+   <type name="univ"/>
+   <type name="seq/Int"/>
+   <set name="$WithDeadLock_s" type="State"/>
+</node>
+
+<node shape="Ellipse" color="Yellow">
+   <type name="Fork"/>
+</node>
+
+<node shape="Parallelogram" color="Green">
+   <type name="Philosopher"/>
+</node>
+
+<node style="Bold">
+   <set name="First" type="ordering/Ord"/>
+   <set name="Next" type="ordering/Ord"/>
+</node>
+
+<node visible="no">
+   <type name="ordering/Ord"/>
+</node>
+
+<edge visible="no">
+   <relation name="left"> <type name="Philosopher"/> <type name="Philosopher"/> </relation>
+   <relation name="right"> <type name="Fork"/> <type name="Philosopher"/> </relation>
+   <relation name="right"> <type name="Philosopher"/> <type name="Philosopher"/> </relation>
+   <relation name="rightFork"> <type name="Philosopher"/> <type name="Fork"/> </relation>
+</edge>
+
+</view>
+
+</alloy>
